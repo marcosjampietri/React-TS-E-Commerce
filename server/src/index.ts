@@ -1,7 +1,6 @@
-var cors = require("cors");
 import express from "express";
 import bodyParser from "body-parser";
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 const app = express();
@@ -9,7 +8,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "../.env" });
+
+app.get("/api", (req, res) => {
+    res.send("Welcome to NodeJs App using TypeScript");
+});
 
 const uri: string = <string>process.env.DATABASE;
 
@@ -21,15 +24,8 @@ mongoose
         useCreateIndex: true,
     })
     .then((err: any) => {
-        console.log("conectado no MarcosDB");
+        console.log("conectado no MarcosDB hereee");
     });
-
-app.use(cors());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("Welcome to NodeJs App using TypeScript");
-});
 
 const PORT: number = parseInt(<string>process.env.PORT, 10) || 5000;
 

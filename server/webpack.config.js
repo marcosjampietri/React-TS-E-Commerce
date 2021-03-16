@@ -1,4 +1,5 @@
 const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
     mode: "development",
@@ -29,6 +30,7 @@ module.exports = {
             lib: false,
             buffer: false,
             util: false,
+            bin: false,
         },
     },
     devServer: {
@@ -37,7 +39,11 @@ module.exports = {
     },
     entry: "./src/index.ts",
     output: {
+        publicPath: "dist",
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),
     },
+
+    externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc.
+    externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
 };
