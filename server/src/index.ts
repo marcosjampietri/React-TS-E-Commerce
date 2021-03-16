@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-dotenv.config({ path: "../.env" });
+dotenv.config({ path: "./.env" });
 
 app.get("/api", (req, res) => {
     res.send("Welcome to NodeJs App using TypeScript");
