@@ -1,4 +1,3 @@
 {
-  "apexskier.typescript.config.isEnabledForJavascript" : "Disable",
-  "apexskier.typescript.config.organizeImportsOnSave" : "false"
+  "workspace.color" : 2
 }
