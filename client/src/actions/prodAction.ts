@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getProdActionCreator } from "../types/types";
 
-export const prodAction: getProdActionCreator = () => async (
+export const prodAction: getProdActionCreator<any> = () => async (
     dispatch,
     getState
 ) => {

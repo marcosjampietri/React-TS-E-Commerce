@@ -26,8 +26,22 @@ const Home = () => {
                     (item) =>
                         item && (
                             <Card key={item._id}>
-                                <h6>Product</h6>
-                                <h2>{item.title}</h2>
+                                <Row>
+                                    <h6>ITEM</h6>
+                                    <h4>{item.title}</h4>
+                                </Row>
+                                <Row>
+                                    <h6>What it is?</h6>
+                                    <h4>{item.description}</h4>
+                                </Row>
+                                <Row>
+                                    <h6>£</h6>
+                                    <h4>{item.price}</h4>
+                                </Row>
+                                <Row>
+                                    <h6></h6>
+                                    <h4>{item.image}</h4>
+                                </Row>
                                 <input form="" />
                             </Card>
                         )
@@ -46,12 +60,20 @@ const Page = styled(animated.div)`
 `;
 const Card = styled(animated.div)`
     border: solid 2px hsla(171, 100%, 50%, 1);
-    width: 200px;
+    width: 500px;
     background-image: linear-gradient(
         hsla(0, 90%, 50%, 1),
         hsla(38, 80%, 50%, 0.91)
     );
     input {
         width: 100%:
+    }
+`;
+const Row = styled(animated.div)`
+    display: flex;
+    align-items: flex-end;
+
+    h6 {
+        width: 100px;
     }
 `;

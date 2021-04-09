@@ -1,3 +1,4 @@
+import { Action } from 'redux';
 import { ThunkAction } from "redux-thunk";
 
 export interface product {
@@ -23,7 +24,7 @@ export interface isLodingAction {
 
 export type allActions = getProdAction | isLodingAction;
 
-export type getProdActionCreator = () => ThunkAction<
+export type getProdActionCreator<allActions extends Action> = () => ThunkAction<
     void,
     storeType,
     {},
