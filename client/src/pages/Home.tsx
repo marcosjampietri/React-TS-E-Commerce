@@ -21,7 +21,9 @@ const Home = () => {
     return (
         <Page>
             <h1>HOMEEEE</h1>
-            {!isLoading &&
+            {isLoading ? (
+                <h1>Loading...</h1>
+            ) : (
                 products.map(
                     (item) =>
                         item && (
@@ -45,7 +47,8 @@ const Home = () => {
                                 <input form="" />
                             </Card>
                         )
-                )}
+                )
+            )}
         </Page>
     );
 };

@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "mon": "nodemon ./dist/main.js",
+        "dev": "nodemon ./dist/main.js",
         "serve": "webpack serve",
         "start": "webpack --watch",
         "build": "webpack",
